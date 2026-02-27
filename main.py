@@ -1,3 +1,9 @@
-print("RTV scraper derp a derp")
-print("RTV scraper derp a derp 2")
-print("RTV scraper derp a derp 3")
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://www.rtvslo.si/"
+
+response = requests.get(url) 
+data = BeautifulSoup(response.text, "html.parser")
+print(data.prettify())
+
